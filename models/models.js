@@ -33,8 +33,13 @@ const UserTrack = sequelize.define("user_track", {
 
 Artist.hasMany(Track);
 Album.hasMany(Track);
+Track.belongsTo(Artist);
+Track.belongsTo(Album);
+
 Track.hasMany(UserTrack);
 User.hasMany(UserTrack);
+UserTrack.belongsTo(Track);
+UserTrack.belongsTo(User);
 
 module.exports = {
     User,
