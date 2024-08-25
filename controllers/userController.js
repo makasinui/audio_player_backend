@@ -32,7 +32,7 @@ class UserController {
     }
 
     const newUser = await User.create({ email,password });
-    const token = createJWT(newUser.id, email, newUser.role );
+    const token = createJWT(newUser.dataValues.id, newUser.dataValues.email, newUser.dataValues.role );
     return res.json({ token })
   }
 }
