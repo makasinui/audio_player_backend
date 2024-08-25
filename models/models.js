@@ -36,6 +36,8 @@ Album.hasMany(Track);
 Track.belongsTo(Artist);
 Track.belongsTo(Album);
 
+Album.belongsTo(Artist);
+
 Track.hasMany(UserTrack);
 User.hasMany(UserTrack);
 UserTrack.belongsTo(Track);
